@@ -1,11 +1,10 @@
 const express = require('express');
+require('./services/passport');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.json({hello: 'heroku'});
-})
+app.use('/auth', require('./routes/auth'));
 
-const PORT = process.env.PORT || 5001;
+const port = process.env.PORT || 5001;
 
-app.listen(PORT);
+app.listen(port);

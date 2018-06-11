@@ -3,17 +3,24 @@ const router = express.Router();
 const passport = require('passport');
 
 router.get(
-	'/google',
+	'/auth/google',
 	passport.authenticate('google', {
 		scope: ['profile', 'email'],
+		prompt: 'select_account',
 	})
 );
 
-router.get('/google/callback', passport.authenticate('google'));
+router.get(
+	'/auth/google/callback',
+	passport.authenticate('google'),
+	(req, res) => {
+		res.redirect('/surveys');
+	}
+);
 
 router.get('/api/logout', (req, res) => {
 	req.logout();
-	res.json(req.user);
+	res.redirect('/');
 });
 
 router.get('/api/current_user', (req, res) => {

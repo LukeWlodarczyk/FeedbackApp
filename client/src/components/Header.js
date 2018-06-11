@@ -21,6 +21,9 @@ class Header extends Component {
 						<li>
 							<Payments />
 						</li>
+						<li style={{ margin: '0 10px' }}>
+							Credits: {this.props.auth.credits}
+						</li>
 						<li>
 							<Link to="/" onClick={this.props.logOut}>
 								Logout
@@ -38,6 +41,7 @@ class Header extends Component {
 					<Link
 						to={this.props.auth ? '/surveys' : '/'}
 						className="left brand-logo"
+						style={{ margin: '0 10px' }}
 					>
 						Feedbacky
 					</Link>

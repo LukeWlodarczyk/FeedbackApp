@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logOut } from '../actions/index';
+import Payments from './Payments';
 
 class Header extends Component {
 	renderContent = () => {
@@ -16,11 +17,16 @@ class Header extends Component {
 				);
 			default:
 				return (
-					<li>
-						<Link to="/" onClick={this.props.logOut}>
-							Logout
-						</Link>
-					</li>
+					<Fragment>
+						<li>
+							<Payments />
+						</li>
+						<li>
+							<Link to="/" onClick={this.props.logOut}>
+								Logout
+							</Link>
+						</li>
+					</Fragment>
 				);
 		}
 	};

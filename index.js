@@ -15,6 +15,8 @@ mongoose
 
 const app = express();
 
+app.use(express.json());
+
 app.use(
 	cookieSession({
 		maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -26,6 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', require('./routes/auth'));
+app.use('/', require('./routes/billing'));
 
 const port = process.env.PORT || 5001;
 

@@ -32,3 +32,19 @@ export const logOut = () => async dispatch => {
 		});
 	}
 };
+
+export const handleToken = token => async dispatch => {
+	try {
+		const { data } = await axios.post('/api/stripe', token);
+
+		dispatch({
+			type: FETCH_USER,
+			payload: data,
+		});
+	} catch (e) {
+		dispatch({
+			type: ERROR_FETCH,
+			payload: e,
+		});
+	}
+};

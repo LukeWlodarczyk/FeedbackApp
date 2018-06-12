@@ -30,6 +30,15 @@ app.use(passport.session());
 app.use('/', require('./routes/auth'));
 app.use('/', require('./routes/billing'));
 
+if (process.env.NODE_ENV === 'production') {
+	app.use(exoress.static('client/build'));
+
+	const path = require('path');
+	app.get('*', (req, res) => {
+		res.sendFile(__dirname, 'client', 'build', 'index.html');
+	});
+}
+
 const port = process.env.PORT || 5001;
 
 app.listen(port);

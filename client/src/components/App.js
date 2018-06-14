@@ -6,6 +6,7 @@ import Header from './Header';
 import Dashboard from './Dashboard';
 import Landing from './Landing';
 import SurveyNew from './SurveyNew';
+import SurveyThanks from './SurveyThanks';
 
 import { fetchUser } from '../actions/index';
 
@@ -21,6 +22,7 @@ class App extends Component {
 					<Route exact path="/" component={Landing} />
 					<Route exact path="/surveys" component={Dashboard} />
 					<Route path="/surveys/new" component={SurveyNew} />
+					<Route path="/surveys/thanks" component={SurveyThanks} />
 				</div>
 			</Router>
 		);

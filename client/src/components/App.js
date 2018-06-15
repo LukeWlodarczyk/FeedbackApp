@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Dashboard from './Dashboard';
 import Landing from './Landing';
-import SurveyNew from './SurveyNew';
-import SurveyThanks from './SurveyThanks';
+import SurveyNew from './surveys/SurveyNew';
+import SurveyThanks from './surveys/SurveyThanks';
 
 import { fetchUser } from '../actions/index';
 

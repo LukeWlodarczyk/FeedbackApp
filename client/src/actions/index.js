@@ -48,3 +48,21 @@ export const handleToken = token => async dispatch => {
 		});
 	}
 };
+
+export const submitSurvey = (values, history) => async dispatch => {
+	try {
+		const { data } = await axios.post('/api/surveys', values);
+
+		history.push('/surveys');
+
+		dispatch({
+			type: FETCH_USER,
+			payload: data,
+		});
+	} catch (e) {
+		dispatch({
+			type: ERROR_FETCH,
+			payload: e,
+		});
+	}
+};

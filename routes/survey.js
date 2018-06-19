@@ -37,4 +37,9 @@ router.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
 	}
 });
 
+router.post('/api/surveys/webhooks', (req, res) => {
+	console.log(req.body);
+	res.json({});
+});
+
 module.exports = router;

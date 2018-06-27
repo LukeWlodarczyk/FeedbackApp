@@ -8,6 +8,13 @@ class SurveyList extends Component {
 	}
 
 	renderSurveys() {
+		if (!this.props.surveys.length) {
+			return (
+				<div style={{ textAlign: 'center' }}>
+					<h5>There are no surveys created yet</h5>
+				</div>
+			);
+		}
 		return this.props.surveys.reverse().map(survey => {
 			return (
 				<div className="card darken-1" key={survey._id}>

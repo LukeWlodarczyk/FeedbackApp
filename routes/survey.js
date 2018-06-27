@@ -14,6 +14,14 @@ const surveyTemplate = require('../services/emailTemplates/survey');
 
 const Survey = mongoose.model('surveys');
 
+router.get('/api/surveys', requireLogin, async (req, res) => {
+	const surveys = await Survey.find({ _user: req.user.id }).select({
+		recipients: false,
+	});
+
+	res.send(surveys);
+});
+
 router.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
 	const { title, subject, body, recipients } = req.body;
 
@@ -41,12 +49,12 @@ router.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
 });
 
 router.post('/api/surveys/webhooks', (req, res) => {
-	const p = new Path('/api/surveys/:surveyId/:choice');
-	console.log(p);
+	const p = new Path('/surveys/:surveyId/:choice');
 
 	_.chain(req.body)
 		.map(({ email, url }) => {
 			const match = p.test(new URL(url).pathname);
+
 			if (match) {
 				return { email, surveyId: match.surveyId, choice: match.choice };
 			}
@@ -69,7 +77,6 @@ router.post('/api/surveys/webhooks', (req, res) => {
 			).exec();
 		})
 		.value();
-	console.log('done');
 
 	res.send({});
 });

@@ -10,7 +10,7 @@ class SurveyList extends Component {
 	renderSurveys() {
 		if (!this.props.surveys.length) {
 			return (
-				<div style={{ textAlign: 'center' }}>
+				<div style={{ textAlign: 'center', marginTop: '40px' }}>
 					<h5>There are no surveys created yet</h5>
 				</div>
 			);

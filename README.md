@@ -11,6 +11,9 @@ Site is published at https://sheltered-river-75436.herokuapp.com/
 - Stripe
 - SendGrid
 - React
+- Redux
+- Redux-Form
+- React-Stripe-Checkout
 
 ### Installation
 

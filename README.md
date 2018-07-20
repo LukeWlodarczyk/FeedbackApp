@@ -1,6 +1,6 @@
 # FeedbackApp
 
-Site is published at https://sheltered-river-75436.herokuapp.com/
+Site is published at https://survey-feedbacky.herokuapp.com/
 
 ## Technologies
 

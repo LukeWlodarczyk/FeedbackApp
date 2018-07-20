@@ -1,6 +1,8 @@
 # FeedbackApp
 
-Site is published at https://survey-feedbacky.herokuapp.com/
+Site is published at https://survey-feedbacky.herokuapp.com
+
+Card number in order to test Stripe: 4242 4242 4242 4242
 
 ## Technologies
 

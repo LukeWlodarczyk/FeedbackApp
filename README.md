@@ -30,3 +30,27 @@ Run app
 ```sh
 $ npm run dev
 ```
+
+You will need to create a dev.js in the server config folder with
+
+```
+module.exports = {
+  mongoURI: 'YOUR_OWN_MONGO_URI',
+  secretOrKey: 'YOUR_OWN_SECRET'
+};
+```
+
+```
+module.exports = {
+	googleClientID:
+		'YOUR_GOOGLE_CLIENT_ID',
+	googleClientSecret: 'YOUR_GOOGLE_CLIENT_SECRET',
+	mongoURI: 'YOUR_MONGO_URI',
+	cookieKey: 'YOUR-COOKIE_KEY',
+	stripePublishableKey: 'YOUR_STRIPE_PUBLISHABLE_KEY',
+	stripeSecretKey: 'YOUR_STRIPE_SECRET_KEY',
+	sendGridKey:
+		'YOUR_SENDGRID_KEY',
+	redirectDomain: 'YOUR_REDIRECT_DOMAIN', // e.g. http://localhost:3000
+};
+```

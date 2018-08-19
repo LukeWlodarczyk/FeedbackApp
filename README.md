@@ -45,3 +45,8 @@ module.exports = {
 	redirectDomain: 'YOUR_REDIRECT_DOMAIN', // e.g. http://localhost:3000
 };
 ```
+and env.development in client folder with 
+
+```
+REACT_APP_STRIPE_KEY=YOUR_STRIPE_PUBLISHABLE_KEY
+```
